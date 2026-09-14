@@ -1,0 +1,29 @@
+{
+  "name": "pi-chunkhound",
+  "version": "0.1.0",
+  "description": "Pi coding-agent extension exposing ChunkHound codebase intelligence: semantic/regex search, deep research, web search, URL fetch, and indexing tools.",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bienwithcode/pi-chunkhound"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  },
+  "pi": {
+    "extensions": [
+      "./extension.ts"
+    ]
+  }
+}
