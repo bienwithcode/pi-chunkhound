@@ -31,7 +31,7 @@ import {
 	resolvePathArg,
 	runChunkhound,
 	type ExecFn,
-} from "./lib/runner";
+} from "./lib/runner.ts";
 
 const DB_RELATIVE_PATH = join(".chunkhound", "db", "chunks.db");
 const INDEX_HINT = "call chunkhound_index first to build it";

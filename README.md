@@ -27,7 +27,7 @@ pi install git:github.com/bienwithcode/pi-chunkhound
 pi install -l git:github.com/bienwithcode/pi-chunkhound
 
 # Local development (loads for the current run only, hot-reloadable via /reload)
-pi -e /path/to/pi-chunkhound/extension.ts
+pi -e /path/to/pi-chunkhound/index.ts
 ```
 
 ## Configuration
@@ -50,7 +50,16 @@ npm install        # dev deps only (types) — runtime peers are provided by pi
 npx tsc --noEmit   # type-check
 ```
 
-`extension.ts` is the entry point; `lib/runner.ts` holds the subprocess runner (exec, heartbeat, truncation, timeout handling).
+`index.ts` is the entry point; `lib/runner.ts` holds the subprocess runner (exec, heartbeat, truncation, timeout handling).
+
+## Testing
+
+```bash
+npm test          # node:test — unit tests for lib/runner.ts + tool wiring (mocked ExtensionAPI)
+npm run typecheck # tsc --noEmit
+```
+
+Tests are dependency-free (`node:test` + `node:assert/strict`, Node ≥ 22.6 for TypeScript stripping) and never spawn real `chunkhound` processes — the `ExecFn` is mocked, and `CHUNKHOUND_BIN` points at fixture files.
 
 ## Security
 

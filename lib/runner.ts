@@ -172,9 +172,10 @@ export function binaryExists(): boolean {
 	return false;
 }
 
-/** Strip a leading "@" (some models prefix paths) and resolve against the base dir. */
+/** Strip a leading "@" (some models prefix paths) and resolve against the base dir.
+ * NOTE: path.resolve works left-to-right like successive `cd`, so the base must come FIRST. */
 export function resolvePathArg(path: string | undefined, baseDir: string): string | undefined {
 	if (!path) return undefined;
 	const stripped = path.replace(/^@/, "");
-	return stripped ? resolve(stripped, baseDir) : undefined;
+	return stripped ? resolve(baseDir, stripped) : undefined;
 }

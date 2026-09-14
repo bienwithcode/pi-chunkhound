@@ -2,6 +2,7 @@
   "name": "pi-chunkhound",
   "version": "0.1.0",
   "description": "Pi coding-agent extension exposing ChunkHound codebase intelligence: semantic/regex search, deep research, web search, URL fetch, and indexing tools.",
+  "type": "module",
   "keywords": [
     "pi-package"
   ],
@@ -21,9 +22,13 @@
     "@types/node": "^24.0.0",
     "typescript": "^5.9.3"
   },
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit"
+  },
   "pi": {
     "extensions": [
-      "./extension.ts"
+      "./index.ts"
     ]
   }
 }
