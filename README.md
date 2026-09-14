@@ -1,6 +1,6 @@
 # pi-chunkhound
 
-A [Pi](https://github.com/earendil-works/pi-coding-agent) extension exposing [ChunkHound](https://github.com/bloopapps/chunkhound) codebase intelligence as agent tools — by wrapping the `chunkhound` CLI.
+A [Pi](https://github.com/earendil-works/pi) extension exposing [ChunkHound](https://github.com/chunkhound/chunkhound) codebase intelligence as agent tools — by wrapping the `chunkhound` CLI.
 
 No runtime dependencies: tools spawn one-shot `chunkhound` subprocesses with proper cancellation, timeouts, heartbeat progress, and output truncation.
 
